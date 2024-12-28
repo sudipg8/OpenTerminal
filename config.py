@@ -36,8 +36,10 @@ class Config:
 
     # Server-side session configuration using Redis
     SESSION_TYPE = 'redis'
+    SESSION_KEY_PREFIX = 'flask_session:' #added by Sudip
+    SESSION_USE_SIGNER = True #added by Sudip
     SESSION_REDIS = redis.StrictRedis(
-        host='localhost',
+        host='localhost', # or host='127.0.0.1'
         port=6379,
         db=0
         # No password parameter since you don't have a Redis password
@@ -48,3 +50,5 @@ class Config:
     # (Optional) CSRF protection settings
     WTF_CSRF_TIME_LIMIT = None  # Disable CSRF token expiration if needed
     WTF_CSRF_ENABLED = True
+
+
