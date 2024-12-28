@@ -49,9 +49,9 @@ def create_app():
 
     # Do not instantiate the DB here, it should be manually created in PostgreSQL
     with app.app_context():
-        # db.create_all() removed to prevent database instantiation
+        # db.create_all() #removed to prevent database instantiation
 
-    return app
+        return app
 
 def schedule_task(app):
     with app.app_context():
