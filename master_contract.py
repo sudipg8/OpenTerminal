@@ -15,7 +15,13 @@ def index_exists(engine, index_name):
     return False
 
 def download_and_store_json(app):
-    tmp_folder = "/tmp"
+    # Use a path relative to this file (master_contract.py),
+    # or the Flask app's directory.
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    tmp_folder = os.path.join(current_dir, "tmp")  
+    # Ensure the folder exists
+    os.makedirs(tmp_folder, exist_ok=True)
+    
     json_file_path = os.path.join(tmp_folder, "OpenAPIScripMaster.json")
     
     with app.app_context():
