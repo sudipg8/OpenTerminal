@@ -1,0 +1,49 @@
+
+
+python -m pip install virtualenv 
+
+.\venv\Scripts\Activate.ps1
+pip list
+pip install flask
+pip freeze > requirements.txt
+pip install -r  requirements.txt
+
+
+git config --global user.name "Sudip Ghosh"
+git config --global user.email "sudip.g8@gmail.com"
+
+
+---------------------------------------------------------------
+
+--for Redis Server installation
+
+sudo apt-get update
+sudo apt-get install redis-server
+
+
+--Start Redis
+sudo service redis-server start
+
+sudo service redis-server status
+
+--verify
+redis-cli ping
+
+--Stopping server
+
+redis-cli shutdown
+
+
+
+--Autostart on WSL Launch (Optional) --If you want Redis to start automatically whenever your WSL instance boots, you can enable the service. On Ubuntu (systemd-based), this is typically:
+
+sudo systemctl enable redis-server
+
+---------------------------------------------
+
+Once installed, starting Redis under WSL is very similar to starting it on a typical Ubuntu/Linux machine. You can manage it using the same CLI commands 
+(service redis-server start|stop|status|restart).
+
+
+
+

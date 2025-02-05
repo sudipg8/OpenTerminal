@@ -61,7 +61,7 @@ def schedule_task(app):
             func=lambda: download_and_store_json(app),
             trigger='cron',
             hour=11,
-            minute=12,
+            minute=50,
             timezone=ist
         )
         scheduler.start()
